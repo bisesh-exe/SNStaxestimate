@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>S&S Accounting</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="header-container">
+        <img src="sns.png" alt="S&S logo">
+        <h1 class="main-heading">S&S Accounting and Business Services Pty. Ltd.</h1>
+        
+    </div>
+    <h2 class="subheading">Estimated Tax Calculator 2024</h2>
+	<form>
+		<table>
+			<tr>
+				<td><label for="first-name">First Name:</label></td>
+				<td><input type="text" id="first-name" name="first-name"></td>
+			</tr>
+			<tr>
+				<td><label for="family-name">Family Name:</label></td>
+				<td><input type="text" id="family-name" name="family-name"></td>
+			</tr>
+			<tr>
+				<td><label for="tfn">TFN:</label></td>
+				<td><input type="text" id="tfn" name="tfn"></td>
+			</tr>
+			<tr>
+				<td><label for="mobile">Mobile:</label></td>
+				<td><input type="tel" id="mobile" name="mobile"></td>
+			</tr>
+			<tr>
+				<td><label for="dob">DOB:</label></td>
+				<td><input type="date" id="dob" name="dob"></td>
+			</tr>
+			<tr>
+				<td><label for="email">Email:</label></td>
+				<td><input type="email" id="email" name="email"></td>
+			</tr>
+			<tr>
+				<td><label for="sex">Sex:</label></td>
+				<td>
+					<select id="sex" name="sex">
+						<option value="male">Male</option>
+						<option value="female">Female</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="occupation">Occupation:</label></td>
+				<td><input type="text" id="occupation" name="occupation"></td>
+			</tr>
+			<tr>
+				<td><label for="address">Address:</label></td>
+				<td><textarea id="address" name="address"></textarea></td>
+			</tr>
+		</table>
+    </form>
+
+    <h2>Income</h2>
+    <form>
+      <div class="income-header">
+        <h3>Income</h3>
+        <h3>Tax Withheld</h3>
+      </div>
+      <div class="income-row">
+        <label for="salary-wages">Salary & Wages</label>
+        <input type="text" id="salary-wages" name="salary-wages" />
+        <input
+          type="text"
+          id="salary-wages-tax-withheld"
+          name="salary-wages-tax-withheld"
+          placeholder="Tax Withheld"
+        />
+      </div>
+      <div class="income-row">
+        <label for="allowances">Allowances</label>
+        <input type="text" id="allowances" name="allowances" />
+        <input
+          type="text"
+          id="allowances-tax-withheld"
+          name="allowances-tax-withheld"
+          placeholder="Tax Withheld"
+        />
+      </div>
+      <div class="income-row">
+        <label for="employer-lumpsum">Employer Lumpsum Payments</label>
+        <input type="text" id="employer-lumpsum" name="employer-lumpsum" />
+        <input
+          type="text"
+          id="employer-lumpsum-tax-withheld"
+          name="employer-lumpsum-tax-withheld"
+          placeholder="Tax Withheld"
+        />
+      </div>
+      <div class="income-row">
+        <label for="employer-termination">Employer Termination Payments</label>
+        <input
+          type="text"
+          id="employer-termination"
+          name="employer-termination"
+        />
+        <input
+          type="text"
+          id="employer-termination-tax-withheld"
+          name="employer-termination-tax-withheld"
+          placeholder="Tax Withheld"
+        />
+      </div>
+      <div class="income-row">
+        <label for="australian-government-allowances"
+          >Australian Government & Allowances</label
+        >
+        <input
+          type="text"
+          id="australian-government-allowances"
+          name="australian-government-allowances"
+        />
+        <input
+          type="text"
+          id="australian-government-allowances-tax-withheld"
+          name="australian-government-allowances-tax-withheld"
+          placeholder="Tax Withheld"
+        />
+      </div>
+      <div class="income-row">
+        <label for="australian-government-pensions"
+          >Australian Government Pensions Allowances</label
+        >
+        <input
+          type="text"
+          id="australian-government-pensions"
+          name="australian-government-pensions"
+        />
+        <input
+          type="text"
+          id="australian-government-pensions-tax-withheld"
+          name="australian-government-pensions-tax-withheld"
+          placeholder="Tax Withheld"
+        />
+      </div>
+      <div class="income-row">
+        <label for="australian-annuities"
+          >Australian Annuities and Superannuation Income Stream</label
+        >
+        <input
+          type="text"
+          id="australian-annuities"
+          name="australian-annuities"
+        />
+        <input
+          type="text"
+          id="australian-annuities-tax-withheld"
+          name="australian-annuities-tax-withheld"
+          placeholder="Tax Withheld"
+        />
+      </div>
+      <div class="income-row">
+        <label for="australian-superannuation-lumpsum"
+          >Australian Superannuation Lumpsum Payments</label
+        >
+        <input
+          type="text"
+          id="australian-superannuation-lumpsum"
+          name="australian-superannuation-lumpsum"
+        />
+        <input
+          type="text"
+          id="australian-superannuation-lumpsum-tax-withheld"
+          name="australian-superannuation-lumpsum-tax-withheld"
+          placeholder="Tax Withheld"
+        />
+      </div>
+      <div class="income-row">
+        <label for="attributed-psi">Attributed PSI</label>
+        <input type="text" id="attributed-psi" name="attributed-psi" />
+        <input
+          type="text"
+          id="attributed-psi-tax-withheld"
+          name="attributed-psi-tax-withheld"
+          placeholder="Tax Withheld"
+        />
+      </div>
+      <div class="income-row">
+        <label for="interest">Interest</label>
+        <input type="text" id="interest" name="interest" />
+        <input
+          type="text"
+          id="interest-tax-withheld"
+          name="interest-tax-withheld"
+          placeholder="Tax Withheld"
+        />
+      </div>
+      <div class="income-row">
+        <label for="other">Other</label>
+        <input type="text" id="other" name="other" />
+        <input
+          type="text"
+          id="other-tax-withheld"
+          name="other-tax-withheld"
+          placeholder="Tax Withheld"
+        />
+      </div>
+      <div class="income-row">
+        <label for="abn">ABN</label>
+        <input type="text" id="abn" name="abn" />
+        <input
+          type="text"
+          id="abn-tax-withheld"
+          name="abn-tax-withheld"
+          placeholder="Tax Withheld"
+        />
+      </div>
+
+      <!-- Display total income and total tax withheld -->
+      <div class="totals">
+        <p id="income-after-tax"></p>
+
+        <!-- <p id="total-income">Total Income: $0.00</p> -->
+        <p id="total-tax-withheld">Total Tax Withheld: $0.00</p>
+      </div>
+    </form>
+
+    <h2>Expenses</h2>
+    <form>
+      <!-- Expense form stays the same -->
+      <div>
+        <label for="expense-D1">D1: Work related Car Expenses</label>
+        <input
+          type="text"
+          id="expense-D1"
+          placeholder="Work related Car Expenses"
+        />
+      </div>
+      <div>
+        <label for="expense-D2">D2: Work related Travel Expenses</label>
+        <input
+          type="text"
+          id="expense-D2"
+          placeholder="Work related Travel Expenses"
+        />
+      </div>
+      <div>
+        <label for="expense-D3"
+          >D3: Work Related Clothing, Laundry Expenses</label
+        >
+        <input
+          type="text"
+          id="expense-D3"
+          placeholder="Work Related Clothing, Laundry Expenses"
+        />
+      </div>
+      <div>
+        <label for="expense-D4">D4: Self Education Expenses</label>
+        <input
+          type="text"
+          id="expense-D4"
+          placeholder="Self Education Expenses"
+        />
+      </div>
+      <div>
+        <label for="expense-D5">D5: Other Work related Expenses</label>
+        <input
+          type="text"
+          id="expense-D5"
+          placeholder="Other Work related Expenses"
+        />
+      </div>
+      <p id="total-expenses"></p>
+    </form>
+      <form>
+      <div class="medicare-levy">
+        <label for="medicare-levy">Applicability of Medicare Levy</label>
+        <select id="medicare-levy" name="medicare-levy">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+      <div>
+        <label for="LMITO">Low and Middle Income Offset (LMITO)</label>
+        <input
+          type="text"
+          id="LMITO"
+          placeholder="Low and Middle Income Offset"
+        />
+    </div>
+
+
+      <button id="calculate-button">Calculate</button>
+
+      <p id="net-income"></p>
+      <p id="tax"></p>
+      <p id="total-tax-withheld"></p>
+      <p id="low-income-rebate"></p>
+
+      <p id="medical-levy"></p>
+<p id="tax-status"></p>
+<p id="tax-payable"></p>
+<p id="tax-refundable"></p>
+    </form>
+    <button id="download-pdf">Download as PDF</button>
+
+
+
+    <p>
+		Declaration:<br>
+		I declare that the information provided to my registered tax agent for the preparation of this tax return including any applicable schedules is true and correct and the agent is authorised to lodge this return. The tax liability calculated in this sheet are just indicative only.The approximate tax refundable or payable can be varied only after careful analysis of all incomes, deductions and offsets. We do not take any responsibility of any inaccuracy contained in this calculation only and calculation has just been made at the request of the client.
+	</p>
+	
+	<p>
+		Bank Account Details:
+	</p>
+	
+	<form>
+		<table>
+			<tr>
+				<td><label for="bsb">BSB:</label></td>
+				<td><input type="text" id="bsb" name="bsb"></td>
+			</tr>
+			<tr>
+				<td><label for="account-number">A/C Number:</label></td>
+				<td><input type="text" id="account-number" name="account-number"></td>
+			</tr>
+			<tr>
+				<td><label for="account-holder-name">A/C Holder Name:</label></td>
+				<td><input type="text" id="account-holder-name" name="account-holder-name"></td>
+			</tr>
+			<tr>
+				<td><label for="signature">Signature:</label></td>
+				<td><input type="text" id="signature" name="signature"></td>
+			</tr>
+			<tr>
+				<td><label for="date">Date:</label></td>
+				<td><input type="date" id="date" name="date"></td>
+			</tr>
+		</table>
+	</form>
+	
+	<p>
+		Website: <a href="http://www.accountingsns.com.au/">http://www.accountingsns.com.au/</a><br>
+		Phone Number: 0292801337
+	</p>
+	
+	<p>
+		NOTES:<br>
+		D1 - CAR expenses from 1st Job to 2nd Job.<br>
+		D2 - Opal and other travel expenses from 1st to 2nd Job.<br>
+		D3 - Laundry = 44 weeks * 3 loads *$1 = $132.00 (Depends on working days MAX - 44)<br>
+		D3 - Working Shoes (1 pair or 2 pairs MAX) * price<br>
+		D3 & D5 split $150 each<br>
+		D5 - Telephone expenses, working bags, chef tools.
+	</p>
+    <script src="index.js"></script>
+  </body>
+</html>
